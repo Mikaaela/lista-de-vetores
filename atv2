@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    float vetor1[10];
+    float vetor2[10];
+
+    // Leitura do vetor
+    printf("Digite 10 elementos do vetor: ");
+    for (int i = 0; i < 10; i++) {
+        scanf("%f", &vetor1[i]);
+    }
+
+    for (int i = 0; i < 10; i++) {
+        vetor2[i] = vetor1[9 - i];
+    }
+
+    // Impressão dos dois vetores
+    printf("Vetor 1: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%.2f ", vetor1[i]);
+    }
+
+    printf("\nVetor 2: ");
+    for (int i = 0; i < 10; i++) {
+        printf("%.2f ", vetor2[i]);
+    }
+
+    return 0;
+}

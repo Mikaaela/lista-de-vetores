@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    int vetor1[20], vetor2[20], vetorDiferenca[20], vetorSoma[20], vetorMultiplicacao[20];
+    int i;
+
+    printf("Digite os elementos do primeiro vetor:\n");
+    for (i = 0; i < 20; i++) {
+        scanf("%d", &vetor1[i]);
+    }
+
+    printf("Digite os elementos do segundo vetor:\n");
+    for (i = 0; i < 20; i++) {
+        scanf("%d", &vetor2[i]);
+    }
+
+    for (i = 0; i < 20; i++) {
+        vetorDiferenca[i] = vetor1[i] - vetor2[i];
+    }
+
+    for (i = 0; i < 20; i++) {
+        vetorSoma[i] = vetor1[i] + vetor2[i];
+    }
+
+    for (i = 0; i < 20; i++) {
+        vetorMultiplicacao[i] = vetor1[i] * vetor2[i];
+    }
+
+    printf("\n----------------------------------------------\n");
+    printf("Vetor diferença:\n");
+    for (i = 0; i < 20; i++) {
+        printf("%d ", vetorDiferenca[i]);
+    }
+
+    printf("\n
+Vetor soma:\n");
+    for (i = 0; i < 20; i++) {
+        printf("%d ", vetorSoma[i]);
+    }
+
+    printf("\n
+Vetor multiplicação:\n");
+    for (i = 0; i < 20; i++) {
+        printf("%d ", vetorMultiplicacao[i]);
+    }
+    printf("\n----------------------------------------------\n");
+
+    return 0;
+}

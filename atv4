@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+#define TAMANHO_VETOR 10
+#define TAMANHO_NOME 100
+
+int main() {
+    char nomes[TAMANHO_VETOR][TAMANHO_NOME];
+    char nomeBuscado[TAMANHO_NOME];
+    int encontrado = 0; 
+
+    printf("Digite 10 nomes:\n");
+    for (int i = 0; i < TAMANHO_VETOR; i++) {
+        printf("Nome %d: ", i+1);
+        fgets(nomes[i], TAMANHO_NOME, stdin);
+        nomes[i][strcspn(nomes[i], "\n")] = '\0'; 
+    }
+
+    printf("Digite o nome a ser buscado: ");
+    fgets(nomeBuscado, TAMANHO_NOME, stdin);
+    nomeBuscado[strcspn(nomeBuscado, "\n")] = '\0'; 
+
+    for (int i = 0; i < TAMANHO_VETOR; i++) {
+        if (strcmp(nomes[i], nomeBuscado) == 0) {
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (encontrado) {
+        printf("ACHEI
+");
+    } else {
+        printf("NÃO ACHEI
+");
+    }
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int vetor1[12];
+    int vetor2[12];
+
+    printf("Digite os 12 elementos do vetor:\n");
+
+    
+    for (int i = 0; i < 12; i++) {
+        scanf("%d", &vetor1[i]);
+    }
+    
+    for (int i = 0; i < 12; i++) {
+        if (i % 2 == 0) {
+            vetor2[i] = vetor1[i] / 2;
+        } else {
+            vetor2[i] = vetor1[i] * 3;
+        }
+    }
+    printf("\nVetor 1: ");
+    for (int i = 0; i < 12; i++) {
+        printf("%d ", vetor1[i]);
+    }
+
+    printf("\nVetor 2: ");
+    for (int i = 0; i < 12; i++) {
+        printf("%d ", vetor2[i]);
+    }
+
+    return 0;
+}

@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+#define MAX 100
+
+void organizarNumeros(int numeros[], int n) {
+    int i, j, temp;
+
+
+    for(i = 0; i < n-1; i++) {
+        for(j = 0; j < n-i-1; j++) {
+            if(numeros[j] % 2 == 0 && numeros[j+1] % 2 == 0 && numeros[j] > numeros[j+1]) {
+                temp = numeros[j];
+                numeros[j] = numeros[j+1];
+                numeros[j+1] = temp;
+            }
+        }
+    }
+
+    for(i = 0; i < n-1; i++) {
+        for(j = 0; j < n-i-1; j++) {
+            if(numeros[j] % 2 != 0 && numeros[j+1] % 2 != 0 && numeros[j] < numeros[j+1]) {
+                temp = numeros[j];
+                numeros[j] = numeros[j+1];
+                numeros[j+1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    int numeros[MAX];
+    int n, i;
+
+    printf("Digite a quantidade de números: ");
+    scanf("%d", &n);
+
+    printf("Digite os números:\n");
+    for(i = 0; i < n; i++) {
+        scanf("%d", &numeros[i]);
+    }
+
+    organizarNumeros(numeros, n);
+
+    printf("Números organizados:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", numeros[i]);
+    }
+
+    return 0;
+}
